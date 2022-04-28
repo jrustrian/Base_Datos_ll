@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/dat', function () {
     return DB::select('select * from TRABAJADOR');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeudaController;
 use App\Http\Controllers\CuentaController;
+use App\Http\Controllers\MovimientoController;
+use App\Http\Controllers\TipoMovimientoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,4 +31,22 @@ Route::prefix('Cuenta')->group(function () {
     Route::delete('/eliminar/{id}', [CuentaController::class, 'delete'])->name('cuenta-eliminar');
     Route::get('/editar/{id}', [CuentaController::class, 'edit'])->name('cuenta-editar');
     Route::PUT('/actualizar/{id}', [CuentaController::class, 'update'])->name('cuenta-actualizar');
+});
+
+Route::prefix('movimiento')->group(function () {
+    Route::get('/agregar', [MovimientoController::class, 'create'])->name('movimiento-agregar');
+    Route::get('/visualizar', [MovimientoController::class, 'index'])->name('movimiento-visualizar');
+    Route::post('/crear', [MovimientoController::class, 'store'])->name('movimiento-crear');
+    Route::delete('/eliminar/{id}', [MovimientoController::class, 'delete'])->name('movimiento-eliminar');
+    Route::get('/editar/{id}', [MovimientoController::class, 'edit'])->name('movimiento-editar');
+    Route::PUT('/actualizar/{id}', [MovimientoController::class, 'update'])->name('movimiento-actualizar');
+});
+
+Route::prefix('tipo')->group(function () {
+    Route::get('/agregar', [TipoMovimientoController::class, 'create'])->name('tipo-agregar');
+    Route::get('/visualizar', [TipoMovimientoController::class, 'index'])->name('tipo-visualizar');
+    Route::post('/crear', [TipoMovimientoController::class, 'store'])->name('tipo-crear');
+    Route::delete('/eliminar/{id}', [TipoMovimientoController::class, 'delete'])->name('tipo-eliminar');
+    //Route::get('/editar/{id}', [MovimientoController::class, 'edit'])->name('movimiento-editar');
+    //Route::PUT('/actualizar/{id}', [MovimientoController::class, 'update'])->name('movimiento-actualizar');
 });

@@ -34,8 +34,10 @@
                         Movimiento
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Agregar</a>
-                        <a class="dropdown-item" href="#">Visualizar</a>
+                        <a class="dropdown-item" href="{{ route('movimiento-agregar') }}">Agregar</a>
+                        <a class="dropdown-item" href="{{ route('movimiento-visualizar') }}">Visualizar</a>
+                        <a class="dropdown-item" href="{{ route('tipo-agregar') }}">Tipo de Movimiento</a>
+                        <a class="dropdown-item" href="{{ route('tipo-visualizar') }}">Consultar Tipos de Movimiento</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

@@ -56,8 +56,8 @@
                         CUENTAS
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Agregar</a>
-                        <a class="dropdown-item" href="#">Visualizar</a>
+                        <a class="dropdown-item" href="{{ route('cuenta-agregar') }}">Agregar</a>
+                        <a class="dropdown-item" href="{{ route('cuenta-visualizar') }}">Visualizar</a>
                         <a class="dropdown-item" href="#">Realizar Transferencia</a>
                         <a class="dropdown-item" href="#">Consultar transferencia</a>
 

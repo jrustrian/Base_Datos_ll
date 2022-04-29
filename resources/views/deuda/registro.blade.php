@@ -1,0 +1,37 @@
+@extends('layouts.app')
+
+@section('content')
+
+<form class="w-50 mx-auto mt-5 pt-5" action="{{ route('deuda-crear') }}" method="POST">
+        @csrf
+        <h3 class="text-center my-1">Registro Deuda</h3>
+
+    <div class="form-group">
+        <label for="users_id">usuario</label>
+        <input type="text" class="form-control" name="users_id" id="users_id">
+    </div>
+
+        <div class="form-group">
+            <label for="name">Nombre de la deuda</label>
+            <input type="text" class="form-control" name="name" id="name">
+        </div>
+
+        <div class="form-group">
+            <label for="description">descripcion</label>
+            <input type="text" class="form-control" name="description" id="description">
+        </div>
+
+        <div class="form-group">
+            <label for="amount">Monto</label>
+            <input type="number" class="form-control" name="amount" id="amount">
+        </div>
+
+        <div class="form-group">
+            <label for="monthly_fee">Cuota Mensual</label>
+            <input type="number" class="form-control" name="monthly_fee" id="monthly_fee">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+@endsection

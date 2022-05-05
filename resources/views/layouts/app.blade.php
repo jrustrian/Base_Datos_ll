@@ -85,6 +85,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Agregar</a>
                         <a class="dropdown-item" href="#">Visualizar</a>
+                        <a class="dropdown-item" href="{{ route('futuro-visualizar') }}">Visualizar</a>
                     </div>
                 </li>
             </ul>

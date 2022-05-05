@@ -18,6 +18,7 @@ class FuturoController extends Controller
 
             ->join('movement_types','movement_types.id','=', 'future_movements.type')
             ->select('future_movements.*','accounts.name as accounts','movement_types.name as types')
+            ->select('future_movements.*','movement_types.name as types')
             ->get();
 
         return view('futuro.visualizar', compact('futuros'));

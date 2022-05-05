@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Movimiento;
 use App\Tipo_Movimiento;
+use App\Vista;
 use App\Cuenta;
 use Illuminate\Http\Request;
+
 
 class MovimientoController extends Controller
 {
@@ -18,10 +20,9 @@ class MovimientoController extends Controller
 
     public function index()
     {
-        $movimientos = DB::table('movements')
-            ->join('accounts','accounts.id','=', 'movements.account_id')
-            ->join('movement_types','movement_types.id','=', 'movements.movement_type_id')
-            ->select('movements.*','accounts.name as account','movement_types.name as types')
+        $movimientos = DB::table('realized_movements')
+            ->join('movement_types','movement_types.id','=', 'realized_movements.type')
+            ->select('realized_movements.*','movement_types.name as types')
             ->get();
 
         return view('movimiento.visualizar', compact('movimientos'));

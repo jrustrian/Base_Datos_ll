@@ -13,9 +13,14 @@
                 @foreach ($cuentas as $cuenta)
 
                     <option value="{{ $cuenta->id }}">{{ $cuenta->name }}, Saldo Disponible:{{ $cuenta->balance }} </option>
+
+
                 @endforeach
+                <div class="form-group hidden" id="res_origen"></div>
+
+
             </select>
-            <div class="form-group hidden" id="res_origen" value=""></div>
+
         </div>
 
         <div class="form-group">
@@ -44,9 +49,16 @@
             <input type="text" class="form-control" name="description" id="description">
         </div>
 
-        <div class="form-group">
-            <label for="future">Movimiento a Futuro</label>
-            <input type="number" class="form-control" name="future" id="future">
+
+        <div>
+            <input type="radio" id="future" name="future" value="1"
+                   >
+            <label for="future">Si Deseo Hacer Movimientos a Futuro</label>
+        </div>
+        <div>
+            <input type="radio" id="future" name="future" value="0"
+                   >
+            <label for="future">No Deseo Hacer Movimientos a Futuro</label>
         </div>
 
         <div class="form-group">

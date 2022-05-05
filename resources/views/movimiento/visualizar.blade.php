@@ -15,7 +15,7 @@
                 <th scope="col">Monto a Debitar</th>
                 <th scope="col">IVA</th>
                 <th scope="col">Descripcion</th>
-                <th scope="col">Movimiento a Futuro</th>
+
                 <th scope="col">Fecha</th>
 
                 <th scope="col">Opciones</th>
@@ -25,13 +25,12 @@
             @foreach ($movimientos as $movimiento)
                 <tr>
                     <th scope="row">{{ $movimiento->id }}</th>
-                    <td>{{ $movimiento->account }}</td>
+                    <td>{{ $movimiento->name }}</td>
                     <td>{{ $movimiento->types }}</td>
                     <td>{{ $movimiento->credit_amount }}</td>
                     <td>{{ $movimiento->debit_amount}}</td>
                     <td>{{ $movimiento->iva}}</td>
                     <td>{{ $movimiento->description}}</td>
-                    <td>{{ $movimiento->future}}</td>
                     <td>{{ $movimiento->m_date}}</td>
 
 

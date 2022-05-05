@@ -47,9 +47,13 @@
             <input type="text" class="form-control" name="description" id="description" value="{{$movimiento->description}}">
         </div>
 
-        <div class="form-group">
-            <label for="future">Movimiento a Futuro</label>
-            <input type="number" class="form-control" name="future" id="future" value="{{$movimiento->future}}">
+        <div>
+            <input type="radio" id="future" name="future" value="1"  >
+            <label for="future">Si Deseo Hacer Movimientos a Futuro</label>
+        </div>
+        <div>
+            <input type="radio" id="future" name="future" value="0"  >
+            <label for="future">No Deseo Hacer Movimientos a Futuro</label>
         </div>
 
         <div class="form-group">

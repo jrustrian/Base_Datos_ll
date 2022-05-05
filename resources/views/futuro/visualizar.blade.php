@@ -24,7 +24,7 @@
             @foreach ($futuros as $futuro)
                 <tr>
                     <th scope="row">{{ $futuro->id }}</th>
-                    <td>{{ $futuro->accounts }}</td>
+                    <td>{{ $futuro->name }}</td>
                     <td>{{ $futuro->types }}</td>
                     <td>{{ $futuro->credit_amount }}</td>
                     <td>{{ $futuro->debit_amount}}</td>

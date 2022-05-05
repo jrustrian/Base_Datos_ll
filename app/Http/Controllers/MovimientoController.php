@@ -37,7 +37,6 @@ class MovimientoController extends Controller
             'movement_type_id' => $data['movement_type_id'],
             'credit_amount' => $data['credit_amount'],
             'debit_amount' => $data['debit_amount'],
-            'iva' => $data['iva'],
             'description' => $data['description'],
             'future' => $data['future'],
             'm_date' => $data['m_date'],

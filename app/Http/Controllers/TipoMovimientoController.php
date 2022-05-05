@@ -36,5 +36,16 @@ class TipoMovimientoController extends Controller
         return redirect()->route('tipo-visualizar');
     }
 
+    public function edit($id)
+    {
+        $tipo = Tipo_Movimiento::find($id);
+
+        return view('tipo_movimiento.editar', compact('tipo'));
+    }
+
+
+
+
+
 
 }

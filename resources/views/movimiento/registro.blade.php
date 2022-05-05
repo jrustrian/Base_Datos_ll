@@ -6,18 +6,22 @@
         @csrf
         <h3 class="text-center my-1">Registro Movimiento</h3>
 
-        <div class="form-group">
+        <div class="form-group hidden">
             <label for="id_grado">Nombre de la Cuenta</label>
             <select name="account_id" id="account_id" class="form-control form-control-lg">
+                <option selected>selecione</option>
                 @foreach ($cuentas as $cuenta)
-                    <option value="{{ $cuenta->id }}">{{ $cuenta->name }}</option>
+
+                    <option value="{{ $cuenta->id }}">{{ $cuenta->name }}, Saldo Disponible:{{ $cuenta->balance }} </option>
                 @endforeach
             </select>
+            <div class="form-group hidden" id="res_origen" value=""></div>
         </div>
 
         <div class="form-group">
             <label for="id_grado">Tipo de Movimiento</label>
             <select name="movement_type_id" id="movement_type_id" class="form-control form-control-lg">
+                <option selected>selecione</option>
                 @foreach ($tipos as $tipo)
                     <option value="{{ $tipo->id }}">{{ $tipo->name }}</option>
                 @endforeach
@@ -34,10 +38,6 @@
             <input type="number" class="form-control" name="debit_amount" id="debit_amount">
         </div>
 
-        <div class="form-group">
-            <label for="iva">IVA</label>
-            <input type="number" class="form-control" name="iva" id="iva">
-        </div>
 
         <div class="form-group">
             <label for="description">Descripcion</label>

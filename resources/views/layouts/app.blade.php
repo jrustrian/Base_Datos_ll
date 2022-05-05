@@ -48,7 +48,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('deuda-agregar') }}">Agregar</a>
                         <a class="dropdown-item" href="{{ route('deuda-visualizar') }}">Visualizar</a>
-                        <a class="dropdown-item" href="#">Abonar Deuda</a>
+                        <a class="dropdown-item" href="{{ route('abono-agregar') }}">Abonar Deuda</a>
                         <a class="dropdown-item" href="#">Consultar Abono</a>
                     </div>
                 </li>
@@ -136,6 +136,8 @@
 
         </div>
     </nav>
+
+
 
     <main>@yield('content')</main>
 </body>

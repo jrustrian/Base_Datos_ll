@@ -10,6 +10,7 @@
         <div class="form-group">
             <label for="cuentas">Nombre de la Cuenta</label>
             <select name="account_id" id="account_id" class="form-control form-control-lg"  >
+                <option selected>selecione</option>
                 @foreach ($cuentas as $cuenta)
                     <option value="{{ $cuenta->id }}"
                         {{ $cuenta->id == $movimiento->account_id ? 'selected' : '' }}>
@@ -40,10 +41,6 @@
             <input type="number" class="form-control" name="debit_amount" id="debit_amount" value="{{$movimiento->debit_amount}}" >
         </div>
 
-        <div class="form-group">
-            <label for="iva">IVA</label>
-            <input type="number" class="form-control" name="iva" id="iva" value="{{$movimiento->iva}}">
-        </div>
 
         <div class="form-group">
             <label for="description">Descripcion</label>

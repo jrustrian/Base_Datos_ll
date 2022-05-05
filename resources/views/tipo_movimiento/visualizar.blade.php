@@ -28,7 +28,7 @@
                             <button type="submit" onclick="return confirm('Estas Seguro?')"
                                     class="btn btn-danger">Eliminar</button>
                         </form>
-                        <form method="GET" action="#">
+                        <form method="GET" action="{{ route('tipo-editar', $tipo->id) }}">
                             @csrf
                             @method('GET')
                             <button type="submit" class="btn btn-warning">Editar</button>

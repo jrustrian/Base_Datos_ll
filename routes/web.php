@@ -5,6 +5,7 @@ use App\Http\Controllers\DeudaController;
 use App\Http\Controllers\CuentaController;
 use App\Http\Controllers\MovimientoController;
 use App\Http\Controllers\TipoMovimientoController;
+use App\Http\Controllers\AbonoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -47,6 +48,15 @@ Route::prefix('tipo')->group(function () {
     Route::get('/visualizar', [TipoMovimientoController::class, 'index'])->name('tipo-visualizar');
     Route::post('/crear', [TipoMovimientoController::class, 'store'])->name('tipo-crear');
     Route::delete('/eliminar/{id}', [TipoMovimientoController::class, 'delete'])->name('tipo-eliminar');
-    //Route::get('/editar/{id}', [MovimientoController::class, 'edit'])->name('movimiento-editar');
-    //Route::PUT('/actualizar/{id}', [MovimientoController::class, 'update'])->name('movimiento-actualizar');
+    Route::get('/editar/{id}', [TipoMovimientoController::class, 'edit'])->name('tipo-editar');
+    Route::PUT('/actualizar/{id}', [TipoMovimientoController::class, 'update'])->name('tipo-actualizar');
+});
+
+Route::prefix('abono')->group(function () {
+    Route::get('/agregar', [AbonoController::class, 'create'])->name('abono-agregar');
+    Route::get('/visualizar', [AbonoController::class, 'index'])->name('abono-visualizar');
+    Route::post('/crear', [AbonoController::class, 'store'])->name('abono-crear');
+ //   Route::delete('/eliminar/{id}', [AbonoController::class, 'delete'])->name('Abono-eliminar');
+  //  Route::get('/editar/{id}', [AbonoController::class, 'edit'])->name('Abono-editar');
+ //   Route::PUT('/actualizar/{id}', [AbonoController::class, 'update'])->name('Abonoactualizar');
 });

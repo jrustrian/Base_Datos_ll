@@ -71,4 +71,5 @@ Route::prefix('futuro')->group(function () {
     Route::delete('/eliminar/{id}', [FuturoController::class, 'delete'])->name('futuro-eliminar');
     Route::get('/editar/{id}', [FuturoController::class, 'edit'])->name('futuro-editar');
     Route::PUT('/actualizar/{id}', [FuturoController::class, 'update'])->name('futuro-actualizar');
+    //Hola Rustrian
 });

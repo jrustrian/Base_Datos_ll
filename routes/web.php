@@ -61,8 +61,8 @@ Route::prefix('abono')->group(function () {
  //   Route::delete('/eliminar/{id}', [AbonoController::class, 'delete'])->name('Abono-eliminar');
   //  Route::get('/editar/{id}', [AbonoController::class, 'edit'])->name('Abono-editar');
  //   Route::PUT('/actualizar/{id}', [AbonoController::class, 'update'])->name('Abonoactualizar');
-
 });
+
 
 Route::prefix('futuro')->group(function () {
   //  Route::get('/agregar', [TipoMovimientoController::class, 'create'])->name('tipo-agregar');
@@ -70,6 +70,4 @@ Route::prefix('futuro')->group(function () {
    // Route::post('/crear', [TipoMovimientoController::class, 'store'])->name('tipo-crear');
     Route::delete('/eliminar/{id}', [FuturoController::class, 'delete'])->name('futuro-eliminar');
     Route::get('/editar/{id}', [FuturoController::class, 'edit'])->name('futuro-editar');
-    Route::PUT('/actualizar/{id}', [FuturoController::class, 'update'])->name('futuro-actualizar');
-
 });

@@ -59,5 +59,5 @@ Route::prefix('abono')->group(function () {
  //   Route::delete('/eliminar/{id}', [AbonoController::class, 'delete'])->name('Abono-eliminar');
   //  Route::get('/editar/{id}', [AbonoController::class, 'edit'])->name('Abono-editar');
  //   Route::PUT('/actualizar/{id}', [AbonoController::class, 'update'])->name('Abonoactualizar');
- //Hola Rustrian es una prueba de git desktop y actualizar ramas 
+
 });

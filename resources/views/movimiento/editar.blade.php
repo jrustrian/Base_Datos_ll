@@ -6,7 +6,7 @@
         @csrf
         @method('PUT')
         <h3 class="text-center my-1">Registro Movimiento</h3>
-
+        @include('mensajes.messages')
         <div class="form-group">
             <label for="cuentas">Nombre de la Cuenta</label>
             <select name="account_id" id="account_id" class="form-control form-control-lg"  >

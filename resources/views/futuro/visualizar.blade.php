@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('mensajes.messages')
 
     <h3 class="my-1 text-center">Tabla de Movimiento a Futuro</h3>
     <div class="row col-12 justify-content-end mb-2 pr-0">
@@ -34,13 +35,13 @@
 
 
                     <td>
-                        <form method="POST" action="#">
+                        <form method="POST" action="{{ route('futuro-eliminar', $futuro->id) }}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" onclick="return confirm('Estas Seguro?')"
                                     class="btn btn-danger">Eliminar</button>
                         </form>
-                        <form method="GET" action="#">
+                        <form method="GET" action="{{ route('futuro-editar', $futuro->id) }}">
                             @csrf
                             @method('GET')
                             <button type="submit" class="btn btn-warning">Editar</button>

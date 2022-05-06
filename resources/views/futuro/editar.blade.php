@@ -2,10 +2,20 @@
 
 @section('content')
 
-    <form class="w-50 mx-auto mt-5 pt-5" action="{{ route('movimiento-actualizar', $futuro->id) }}" method="POST">
+    <form class="w-50 mx-auto mt-5 pt-5" action="{{ route('futuro-actualizar', $movimiento->id) }}" method="POST">
         @csrf
         @method('PUT')
-        <h3 class="text-center my-1">Registro Movimiento</h3>
+        <h3 class="text-center my-1">Actualizacion de Movimientos a Futuro</h3>
+
+        <div>
+            <input type="radio" id="future" name="future" value="1"  >
+            <label for="future">Si Deseo Hacer Movimientos a Futuro</label>
+        </div>
+        <div>
+            <input type="radio" id="future" name="future" value="0"  >
+            <label for="future">No Deseo Hacer Movimientos a Futuro</label>
+        </div>
+
 
         <div class="form-group">
             <label for="cuentas">Nombre de la Cuenta</label>
@@ -13,9 +23,9 @@
                 <option selected>selecione</option>
                 @foreach ($cuentas as $cuenta)
                     <option value="{{ $cuenta->id }}"
-                        {{ $cuenta->id == $movimiento->account_id ? 'selected' : '' }}>
+                        {{ $cuenta->id == $movimiento->account_id  ? 'selected' : '' }}>
 
-                        {{ $cuenta->name }}</option>
+                        {{ $cuenta->name }}, Saldo Disponibe: {{ $cuenta->balance }} </option>
                 @endforeach
             </select>
         </div>
@@ -25,7 +35,7 @@
             <select name="movement_type_id" id="movement_type_id" class="form-control form-control-lg">
                 @foreach ($tipos as $tipo)
                     <option value="{{ $tipo->id }}"
-                        {{ $tipo->id == $movimiento->movement_type_id ? 'selected' : '' }}
+                        {{ $tipo->id == $movimiento->type ? 'selected' : '' }}
                     >{{ $tipo->name }}</option>
                 @endforeach
             </select>
@@ -47,14 +57,7 @@
             <input type="text" class="form-control" name="description" id="description" value="{{$movimiento->description}}">
         </div>
 
-        <div>
-            <input type="radio" id="future" name="future" value="1"  >
-            <label for="future">Si Deseo Hacer Movimientos a Futuro</label>
-        </div>
-        <div>
-            <input type="radio" id="future" name="future" value="0"  >
-            <label for="future">No Deseo Hacer Movimientos a Futuro</label>
-        </div>
+
 
         <div class="form-group">
             <label for="m_date">Fecha</label>

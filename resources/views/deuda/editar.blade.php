@@ -6,7 +6,7 @@
         @csrf
         @method('PUT')
         <h3 class="text-center my-1">Registro Deuda</h3>
-
+        @include('mensajes.messages')
 
 
         <div class="form-group">

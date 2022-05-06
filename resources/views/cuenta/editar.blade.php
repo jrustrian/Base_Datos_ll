@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('mensajes.messages')
 
     <form class="w-50 mx-auto mt-5 pt-5" action="{{ route('cuenta-actualizar', $cuenta->id) }}" method="POST">
         @csrf
@@ -21,5 +22,6 @@
 
 
         <button type="submit" class="btn btn-primary">Registrar</button>
+
     </form>
 @endsection

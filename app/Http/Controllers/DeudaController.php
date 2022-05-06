@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Deuda;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\Deuda\DeudaRegistrarRequest;
+use App\Http\Requests\Deuda\DeudaEditarRequest;
+use Session;
 
 
 class DeudaController extends Controller
@@ -22,7 +24,7 @@ class DeudaController extends Controller
         return view('deuda.visualizar', compact('deudas'));
     }
 
-        public function store(Request $request)
+        public function store(DeudaRegistrarRequest $request)
     {
         $data = $request->all();
 
@@ -34,7 +36,7 @@ class DeudaController extends Controller
         'amount' => $data['amount'],
         'monthly_fee' => $data['monthly_fee'],
     ]);
-
+        Session::flash('save','Se ha registrado correctamente');
         return redirect()->route('deuda-visualizar')->with('success', 'Registro realizado exitosamente');
     }
 
@@ -42,7 +44,9 @@ class DeudaController extends Controller
     public function delete($id)
     {
         Deuda::find($id)->delete();
+        Session::flash('delete','Se ha eliminado correctamente');
         return redirect()->route('deuda-visualizar');
+
     }
 
     public function edit($id)
@@ -56,7 +60,7 @@ class DeudaController extends Controller
 
     }
 
-    public function update(Request $request, $id)
+    public function update(DeudaEditarRequest $request, $id)
     {
         $deuda = Deuda::findOrFail($id);
         $deuda->name = $request->name;
@@ -65,6 +69,7 @@ class DeudaController extends Controller
         $deuda->monthly_fee= $request->monthly_fee;
 
         $deuda->save();
+        Session::flash('update','Se ha actualizado correctamente');
         return redirect()->route('deuda-visualizar');
     }
 

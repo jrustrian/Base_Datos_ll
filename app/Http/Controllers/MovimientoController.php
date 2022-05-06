@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Movimiento;
 use App\Tipo_Movimiento;
-use App\Vista;
 use App\Cuenta;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\Movimiento\MovimientoRegistrarRequest;
+use App\Http\Requests\Movimiento\MovimientoEditarRequest;
+use Session;
 
 class MovimientoController extends Controller
 {
@@ -28,7 +29,7 @@ class MovimientoController extends Controller
         return view('movimiento.visualizar', compact('movimientos'));
     }
 
-    public function store(Request $request)
+    public function store(MovimientoRegistrarRequest $request)
     {
         $data = $request->all();
 
@@ -42,13 +43,14 @@ class MovimientoController extends Controller
             'future' => $data['future'],
             'm_date' => $data['m_date'],
         ]);
-
+        Session::flash('save','Se ha registrado correctamente');
         return redirect()->route('movimiento-visualizar')->with('success', 'Registro realizado exitosamente');
     }
 
     public function delete($id)
     {
         Movimiento::find($id)->delete();
+        Session::flash('delete','Se ha eliminado correctamente');
         return redirect()->route('movimiento-visualizar');
     }
 
@@ -62,7 +64,7 @@ class MovimientoController extends Controller
 
     }
 
-    public function update(Request $request, $id)
+    public function update(MovimientoEditarRequest $request, $id)
     {
         $movimiento = Movimiento::findOrFail($id);
         $movimiento->account_id = $request->account_id;
@@ -75,6 +77,7 @@ class MovimientoController extends Controller
         $movimiento->m_date= $request->m_date;
 
         $movimiento->save();
+        Session::flash('update','Se ha actualizado correctamente');
         return redirect()->route('movimiento-visualizar');
     }
 

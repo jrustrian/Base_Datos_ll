@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Cuenta;
+use App\Http\Requests\Cuenta\CuentaRegistroRequest;
+use App\Http\Requests\Cuenta\CuentaEditarRequest;
 use Illuminate\Http\Request;
+use Session;
 
 class CuentaController extends Controller
 {
@@ -18,7 +21,7 @@ class CuentaController extends Controller
         return view('cuenta.visualizar', compact('cuentas'));
     }
 
-    public function store(Request $request)
+    public function store(CuentaRegistroRequest $request)
     {
         $data = $request->all();
 
@@ -28,13 +31,15 @@ class CuentaController extends Controller
             'name' => $data['name'],
             'balance' => $data['saldo'],
         ]);
-
-        return redirect()->route('cuenta-visualizar')->with('success', 'Registro realizado exitosamente');
+        Session::flash('save','Se ha registrado correctamente');
+        return redirect()->route('cuenta-visualizar');
     }
     public function delete($id)
     {
         Cuenta::find($id)->delete();
+        Session::flash('delete','Se ha eliminado correctamente');
         return redirect()->route('cuenta-visualizar');
+
     }
 
     public function edit($id)
@@ -48,13 +53,14 @@ class CuentaController extends Controller
 
     }
 
-    public function update(Request $request, $id)
+    public function update(CuentaEditarRequest  $request, $id)
     {
         $cuenta = Cuenta::findOrFail($id);
         $cuenta->name = $request->name;
         $cuenta->balance = $request->saldo;
 
         $cuenta->save();
+        Session::flash('update','Se ha actualizado correctamente');
         return redirect()->route('cuenta-visualizar');
     }
 

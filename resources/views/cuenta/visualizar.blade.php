@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+    @include('mensajes.messages')
     <h3 class="my-1 text-center">Tabla de Cuentas</h3>
     <div class="row col-12 justify-content-end mb-2 pr-0">
 

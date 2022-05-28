@@ -6,6 +6,7 @@ use App\Abono;
 use App\Cuenta;
 use App\Deuda;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AbonoController extends Controller
 {
@@ -28,9 +29,9 @@ class AbonoController extends Controller
 
     public function store(Request $request)
     {
-        //
-    }
+ 
 
+}
 
     public function show(Abono $abono)
     {

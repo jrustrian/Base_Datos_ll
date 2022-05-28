@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\DB;
 use App\Movimiento;
 use App\Tipo_Movimiento;
 use App\Cuenta;
-use Illuminate\Http\Request;
 use App\Http\Requests\Movimiento\MovimientoRegistrarRequest;
 use App\Http\Requests\Movimiento\MovimientoEditarRequest;
 use Session;

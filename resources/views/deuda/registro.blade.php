@@ -8,8 +8,14 @@
     @include('mensajes.messages')
 
     <div class="form-group">
+<<<<<<< Updated upstream
         <input type="text" class="form-control" name="users_id" id="users_id"
                value="1" hidden>
+=======
+        <label for="users_id">Usuario</label>
+        <input type="text" class="form-control {{$errors->has('users_id')? 'is-invalid':''}}" name="users_id" id="users_id"
+               value="{{isset($deuda->users_id)?$deuda->users_id:old('users_id') }}">
+>>>>>>> Stashed changes
     </div>
 
         <div class="form-group">

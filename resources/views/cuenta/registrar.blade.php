@@ -7,11 +7,8 @@
         <h3 class="text-center my-1">Registro Cuenta</h3>
         @include('mensajes.messages')
         <div class="form-group">
-            <label for="users_id">usuario</label>
-            <input type="text" class="form-control {{$errors->has('users_id')? 'is-invalid':''}}" name="users_id" id="users_id"
-                   value="{{isset($cuenta->users_id)?$cuenta->users_id:old('users_id') }}">
-
-
+            <input type="text" class="form-control" name="users_id" id="users_id"
+                   value="1" hidden>
         </div>
 
         <div class="form-group">

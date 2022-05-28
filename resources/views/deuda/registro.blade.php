@@ -10,12 +10,10 @@
     <div class="form-group">
         <input type="text" class="form-control" name="users_id" id="users_id"
                value="1" hidden>
-        <label for="users_id">Usuario</label>
-        <input type="text" class="form-control {{$errors->has('users_id')? 'is-invalid':''}}" name="users_id" id="users_id"
-               value="{{isset($deuda->users_id)?$deuda->users_id:old('users_id') }}">
     </div>
 
-        <div class="form-group">
+
+    <div class="form-group">
             <label for="name">Nombre de la deuda</label>
             <input type="text" class="form-control {{$errors->has('name')? 'is-invalid':''}}" name="name" id="name"
                    value="{{isset($deuda->name)?$deuda->name:old('name') }}">

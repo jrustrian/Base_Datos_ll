@@ -2,13 +2,14 @@
 
 @section('content')
 
-    <form class="w-50 mx-auto mt-5 pt-5" action="{{ route('abono-crear') }}" method="POST">
+    <form class="w-50 mx-auto mt-5 pt-5" action="#" method="POST">
         @csrf
-        <h3 class="text-center my-1">Registro Abonos</h3>
+        @method('PUT')
+        <h3 class="text-center my-1">Registro de Pagos de Evento</h3>
 
 
         <div class="form-group">
-            <label for="">Nombre de la Deuda</label>
+            <label for="">Nombre del Evento</label>
             <select name="v_debt_id" id="v_debt_id" class="form-control form-control-lg">
                 <option selected>selecione</option>
                 @foreach ($deudas as $deuda)
@@ -49,6 +50,6 @@
 
 
 
-        <button type="submit" class="btn btn-primary">Editar Deuda</button>
+        <button type="submit" class="btn btn-primary">Registrar</button>
     </form>
 @endsection

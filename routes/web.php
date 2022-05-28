@@ -7,7 +7,8 @@ use App\Http\Controllers\MovimientoController;
 use App\Http\Controllers\TipoMovimientoController;
 use App\Http\Controllers\FuturoController;
 use App\Http\Controllers\AbonoController;
-
+use App\Http\Controllers\PagoEventoController;
+use App\Http\Controllers\EventoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -69,4 +70,23 @@ Route::prefix('futuro')->group(function () {
     Route::delete('/eliminar/{id}', [FuturoController::class, 'delete'])->name('futuro-eliminar');
     Route::get('/editar/{id}', [FuturoController::class, 'edit'])->name('futuro-editar');
     Route::PUT('/actualizar/{id}', [FuturoController::class, 'update'])->name('futuro-actualizar');
+});
+
+
+Route::prefix('pagoevento')->group(function () {
+    Route::get('/agregar', [PagoEventoController::class, 'create'])->name('pagoevento-agregar');
+    Route::get('/visualizar', [PagoEventoController::class, 'index'])->name('pagoevento-visualizar');
+    Route::post('/crear', [PagoEventoController::class, 'store'])->name('-crear');
+    //   Route::delete('/eliminar/{id}', [AbonoController::class, 'delete'])->name('Abono-eliminar');
+    //  Route::get('/editar/{id}', [AbonoController::class, 'edit'])->name('Abono-editar');
+    //   Route::PUT('/actualizar/{id}', [AbonoController::class, 'update'])->name('Abonoactualizar');
+});
+
+Route::prefix('evento')->group(function () {
+    Route::get('/agregar', [EventoController::class, 'create'])->name('evento-agregar');
+    Route::get('/visualizar', [EventoController::class, 'index'])->name('evento-visualizar');
+    Route::post('/crear', [EventoController::class, 'store'])->name('evento-crear');
+    Route::delete('/eliminar/{id}', [EventoController::class, 'delete'])->name('evento-eliminar');
+    Route::get('/editar/{id}', [EventoController::class, 'edit'])->name('evento-editar');
+    Route::PUT('/actualizar/{id}', [EventoController::class, 'update'])->name('evento-actualizar');
 });

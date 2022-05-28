@@ -71,8 +71,8 @@
                         Eventos
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Agregar</a>
-                        <a class="dropdown-item" href="#">Visualizar</a>
+                        <a class="dropdown-item" href="{{ route('evento-agregar') }}">Agregar</a>
+                        <a class="dropdown-item" href="{{ route('evento-visualizar') }}">Visualizar</a>
                         <a class="dropdown-item" href="#">Pagar Evento</a>
                         <a class="dropdown-item" href="#">Consultar Evento</a>
                     </div>
@@ -83,7 +83,7 @@
                         Movimiento a Futuro
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Agregar</a>
+
                         <a class="dropdown-item" href="{{ route('futuro-visualizar') }}">Visualizar</a>
                     </div>
                 </li>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Cuenta;
+use App\Evento;
 use App\Pago_Evento;
 use Illuminate\Http\Request;
 
@@ -17,67 +19,42 @@ class PagoEventoController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        {
+            {
+                $eventos = eventos::all();
+                $cuentas = Cuenta::all();
+                return view("Pago_Evento.registro", compact('eventos','cuentas'));
+            }
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Pago_Evento  $pago_Evento
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Pago_Evento $pago_Evento)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Pago_Evento  $pago_Evento
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Pago_Evento $pago_Evento)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pago_Evento  $pago_Evento
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Pago_Evento $pago_Evento)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Pago_Evento  $pago_Evento
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Pago_Evento $pago_Evento)
     {
         //

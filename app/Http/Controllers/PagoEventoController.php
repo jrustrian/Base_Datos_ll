@@ -9,25 +9,23 @@ use Illuminate\Http\Request;
 
 class PagoEventoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+
 
     public function create()
+
     {
-        {
-            {
-                $eventos = eventos::all();
-                $cuentas = Cuenta::all();
-                return view("Pago_Evento.registro", compact('eventos','cuentas'));
-            }
-        }
+        $eventos = Evento::all();
+        $cuentas = Cuenta::all();
+        return view("Pago_Evento.registro", compact('eventos','cuentas'));
+
+
+    }
+
+    public function index()
+    {
+
+        return view('Pago_evento.visualizar');
+
     }
 
 

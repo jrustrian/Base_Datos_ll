@@ -12,9 +12,9 @@
             <label for="">Nombre del Evento</label>
             <select name="v_debt_id" id="v_debt_id" class="form-control form-control-lg">
                 <option selected>selecione</option>
-                @foreach ($deudas as $deuda)
+                @foreach ($eventos as $evento)
 
-                    <option value="{{ $deuda->id }}">{{ $deuda->name }}</option>
+                    <option value="{{ $evento->id }}">{{ $evento->name }}</option>
                 @endforeach
             </select>
 

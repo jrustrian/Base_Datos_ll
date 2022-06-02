@@ -73,8 +73,8 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('evento-agregar') }}">Agregar</a>
                         <a class="dropdown-item" href="{{ route('evento-visualizar') }}">Visualizar</a>
-                        <a class="dropdown-item" href="#">Pagar Evento</a>
-                        <a class="dropdown-item" href="#">Consultar Evento</a>
+                        <a class="dropdown-item" href="{{ route('pagoevento-agregar') }}">Pagar Evento</a>
+                        <a class="dropdown-item" href="{{ route('pagoevento-visualizar') }}">Consultar Pago Evento</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
